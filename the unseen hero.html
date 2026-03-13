@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MediaTek 2026 Global Volunteer Hero Recognition — Honoring colleagues who make a difference.">
+  <title>2026 Global Volunteer Hero Recognition | MediaTek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { mtk: { orange: '#F05A22', blue: '#0065A4', gray: '#1d1d1f', light: '#f5f5f7' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #EBEBEF;
+      color: #1d1d1f;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    section {
+      scroll-margin-top: 5rem;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .glass-nav.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.will-animate {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .text-shine-orange {
+      background: linear-gradient(110deg, #CC5200 0%, #FF6600 20%, #FF9944 40%, #FFCC88 50%, #FF9944 60%, #FF6600 80%, #CC5200 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shine 4.5s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+
+      0%,
+      100% {
+        background-position: 0% center;
+      }
+
+      50% {
+        background-position: 100% center;
+      }
+    }
+
+    a.text-link {
+      color: #F05A22;
+      text-decoration: underline;
+      font-weight: 500;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    a.text-link:hover {
+      color: #c94a18;
+    }
+
+    .light-glass-card {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      border-radius: 28px;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    }
+
+    .light-glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .icon-glow-wrapper {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-glow-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: currentColor;
+      opacity: 0.12;
+      filter: blur(16px);
+      border-radius: 50%;
+      transition: opacity 0.35s ease;
+    }
+
+    .light-glass-card:hover .icon-glow-wrapper::before {
+      opacity: 0.28;
+    }
+
+    details {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    details>summary {
+      list-style: none;
+      outline: none;
+    }
+
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary~* {
+      animation: slideDown 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    details[open] .faq-answer {
+      color: #4a4a5e;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes subtle-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(240, 90, 34, 0.45);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(240, 90, 34, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(240, 90, 34, 0);
+      }
+    }
+
+    .dot-pulse {
+      animation: subtle-pulse 2.2s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hero-glow::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72rem;
+      height: 72rem;
+      background: radial-gradient(ellipse at 50% 45%, rgba(255, 220, 100, 0.22) 0%, rgba(255, 180, 50, 0.10) 35%, rgba(240, 90, 34, 0.06) 60%, transparent 80%);
+      border-radius: 50%;
+      animation: drift 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1.07) rotate(4deg);
+      }
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(240, 90, 34, 0.25);
+      color: #F05A22;
+      background: rgba(240, 90, 34, 0.06);
+    }
+
+    .btn-glow {
+      box-shadow: 0 0 18px rgba(240, 90, 34, 0.45), 0 0 40px rgba(240, 90, 34, 0.2);
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 28px rgba(240, 90, 34, 0.7), 0 0 60px rgba(240, 90, 34, 0.35);
+    }
+
+    .text-shine-yellow {
+      background: linear-gradient(110deg, #E09000 0%, #FFCC00 25%, #FFE570 50%, #FFCC00 75%, #E09000 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shine 3s ease-in-out infinite;
+    }
+
+    .text-glow-shine {
+      display: inline-block;
+      animation: shine 3s ease-in-out infinite;
+      background: linear-gradient(110deg, #7B2FF7 0%, #C2185B 30%, #FF4081 50%, #C2185B 70%, #7B2FF7 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 10px rgba(194, 24, 91, 0.85));
+    }
+
+    .text-glow-blue {
+      display: inline-block;
+      background: linear-gradient(120deg, #2196F3 0%, #64B5F6 55%, #4DD0E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 6px rgba(100, 181, 246, 0.5));
+    }
+
+    mark.who-mark {
+      background: none;
+      color: inherit;
+      position: relative;
+      display: inline;
+    }
+
+    mark.who-mark::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      bottom: 1px;
+      height: 9px;
+      background: rgba(255, 214, 0, 0.42);
+      border-radius: 3px;
+      transform: rotate(-0.8deg) skewX(-3deg);
+      z-index: -1;
+    }
+
+    .footer-glow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #F05A22, #FF8C42);
+      border-radius: 999px;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 0 20px rgba(240, 90, 34, 0.5), 0 0 50px rgba(240, 90, 34, 0.25);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .footer-glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(240, 90, 34, 0.75), 0 0 70px rgba(240, 90, 34, 0.4);
+    }
+
+    .timeline-line {
+      background: linear-gradient(90deg, #e5e7eb 0%, #F05A22 34%, #e5e7eb 68%, #0065A4 88%, #e5e7eb 100%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar" role="navigation"
+    aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center">
+        <span class="font-bold text-xl tracking-tight text-gray-900">MediaTek</span>
+
+      </div>
+      <div class="hidden md:flex items-center space-x-7 text-sm font-medium text-gray-500">
+        <a href="#about" class="hover:text-mtk-orange transition-colors duration-200" data-i18n="nav_about">About</a>
+        <a href="#who" class="hover:text-mtk-orange transition-colors duration-200" data-i18n="nav_criteria">Unseen
+          Hero</a>
+        <a href="#value" class="hover:text-mtk-orange transition-colors duration-200" data-i18n="nav_value">Honor</a>
+        <a href="#timeline" class="hover:text-mtk-orange transition-colors duration-200"
+          data-i18n="nav_timeline">Timeline</a>
+        <a href="#faq" class="hover:text-mtk-orange transition-colors duration-200" data-i18n="nav_faq">FAQ</a>
+        <button onclick="toggleLanguage()" aria-label="Switch language"
+          class="flex items-center space-x-1 px-3 py-1.5 rounded-full hover:bg-black/5 transition-colors duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+            </path>
+          </svg>
+          <span id="lang-label" class="text-xs font-semibold">EN / 中</span>
+        </button>
+      </div>
+      <a href="mailto:jane-yc.huang@mediatek.com?subject=[Global_Volunteer_Hero]_Questions_Regarding_Recognition"
+        class="bg-gray-900 text-white px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-black transition-all duration-200 hover:scale-105 transform"
+        data-i18n="nav_contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#F5F5F7]">
+    <div class="hero-glow"></div>
+    <div class="reveal max-w-5xl mx-auto relative z-10 pt-20">
+      <div class="tag-pill mb-8" data-i18n="hero_pre">2026 Global Volunteer Hero Recognition</div>
+      <h1 class="text-5xl md:text-7xl lg:text-[7.5rem] font-bold mb-6 tracking-tighter leading-[1.02]">
+        <span class="text-shine-orange" data-i18n="hero_title">The Unseen Hero</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed mb-12"
+        data-i18n="hero_desc">
+        Honoring those who make a difference — everywhere.<br>Because every small act creates a big impact.
+      </p>
+      <p class="text-sm text-gray-400 mb-4 font-medium" data-i18n="hero_cta_hint">Use Your Registration Assistant-Jarvis to Generate Your
+        Story</p>
+      <a href="https://copilot.mediatek.inc/#/chat?agent=03e91845-13ef-40a5-94e3-1d6f3094c714" target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-10 py-4 bg-gray-900 text-white rounded-full text-base font-semibold btn-glow hover:scale-105 transition-all duration-300 group">
+        <span data-i18n="hero_cta_btn">Apply Now</span>
+        <svg class="w-5 h-5 ml-2.5 text-mtk-orange group-hover:translate-x-1 transition-transform duration-200"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+      <p class="mt-6 text-xs text-gray-400 tracking-wide font-medium">Application Deadline · March 20, 2026</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-32 px-6 bg-[#F5F5F7]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center reveal">
+        <div
+          class="order-2 md:order-1 relative h-[480px] rounded-[28px] overflow-hidden shadow-2xl group border border-white/40">
+          <img
+            src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="MediaTek volunteers making a difference"
+            class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+        </div>
+        <div class="order-1 md:order-2">
+          <span class="tag-pill mb-5 inline-flex" data-i18n="about_label">Our Mission</span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-7 text-gray-900 tracking-tight leading-tight"
+            data-i18n="about_headline">Small Act, Big Impact.</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6 font-medium" data-i18n="about_text1">We want to shine a
+            light on MediaTek colleagues who dedicate their time to making the world better. It's not just a recognition
+            — it's a tribute to the unseen kindness around us.</p>
+          <p class="text-base text-gray-500 leading-relaxed" data-i18n="about_text2">Whether you are caring for stray
+            animals, storytelling at schools, or using your skills to help NGOs — if you are doing it regularly, you are
+            the hero we are looking for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEAMLESS BG WRAPPER -->
+  <div class="relative overflow-hidden">
+    <div
+      class="absolute top-0 right-[-8%] w-[900px] h-[900px] bg-mtk-orange/10 rounded-full blur-[130px] pointer-events-none">
+    </div>
+    <div
+      class="absolute top-[30%] left-[-8%] w-[700px] h-[700px] bg-mtk-blue/6 rounded-full blur-[130px] pointer-events-none">
+    </div>
+    <div
+      class="absolute bottom-0 right-[8%] w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none">
+    </div>
+
+    <!-- WHO -->
+    <section id="who" class="py-32 px-6 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-20 reveal text-center max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold mb-10 text-gray-900 tracking-tight" data-i18n="criteria_title">Who
+            is
+            the Unseen Hero?</h2>
+          <!-- Apple-style hero subtitle -->
+          <p class="text-2xl md:text-3xl font-semibold text-gray-800 tracking-tight leading-snug mb-5"
+            data-i18n="who_intro">We're looking for someone who commits to volunteering <mark
+              class="who-mark">regularly</mark> or <mark class="who-mark">long-term</mark>!</p>
+          <p class="text-base text-gray-500 mb-8 font-medium" data-i18n="who_sub">Your action doesn't need to be grand —
+            it just needs to show your sustained commitment.</p>
+          <p class="text-sm font-semibold text-gray-700 bg-amber-50 border border-amber-200 rounded-full inline-block px-5 py-2"
+            data-i18n="who_meta">💡 1+ year earns bonus points &nbsp;·&nbsp; Individual, team, or nominate someone — all
+            welcome!</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+          <div class="light-glass-card p-9 text-center flex flex-col items-center justify-center group">
+            <div class="icon-glow-wrapper text-mtk-orange"><svg class="w-10 h-10 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                </path>
+              </svg></div>
+            <h3 class="font-bold text-gray-900 mb-2.5 text-lg" data-i18n="who_card1_title">陪伴關懷</h3>
+            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="who_card1_text">校園導護、說故事<br>養老院與病童陪伴</p>
+          </div>
+          <div class="light-glass-card p-9 text-center flex flex-col items-center justify-center group">
+            <div class="icon-glow-wrapper text-mtk-orange"><svg class="w-10 h-10 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+              </svg></div>
+            <h3 class="font-bold text-gray-900 mb-2.5 text-lg" data-i18n="who_card2_title">知識與技能</h3>
+            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="who_card2_text">NGO 網站架設<br>社區教學、防詐宣導</p>
+          </div>
+          <div class="light-glass-card p-9 text-center flex flex-col items-center justify-center group">
+            <div class="icon-glow-wrapper text-mtk-orange"><svg class="w-10 h-10 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg></div>
+            <h3 class="font-bold text-gray-900 mb-2.5 text-lg" data-i18n="who_card3_title">Eco 永續</h3>
+            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="who_card3_text">淨灘、淨山活動<br>永續生活推廣</p>
+          </div>
+          <div class="light-glass-card p-9 text-center flex flex-col items-center justify-center group">
+            <div class="icon-glow-wrapper text-mtk-orange"><svg class="w-10 h-10 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5">
+                </path>
+              </svg></div>
+            <h3 class="font-bold text-gray-900 mb-2.5 text-lg" data-i18n="who_card4_title">Life 生命</h3>
+            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="who_card4_text">收容所志工<br>動物救援、中途之家</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- AI CTA -->
+    <section class="py-16 px-6 relative z-10">
+      <div class="text-center reveal max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight" data-i18n="ai_title">報名，變得前所未有的簡單
+        </h2>
+        <p class="text-gray-500 mb-10 leading-relaxed text-lg" data-i18n="ai_text"><strong
+            class="text-gray-800 font-bold">We’ve simplified everything.</strong><br>Meet the new AI Writing Agent —
+          chat for a few minutes, share a few key points, and it crafts your volunteer story instantly.</p>
+        <a href="https://copilot.mediatek.inc/#/chat?agent=03e91845-13ef-40a5-94e3-1d6f3094c714" target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-10 py-5 bg-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl hover:bg-black hover:-translate-y-1 transition-all duration-300 group">
+          <span class="mr-3 text-base" data-i18n="hero_cta">APPLY NOW — Your Jarvis is Ready</span>
+          <svg class="w-5 h-5 text-mtk-orange group-hover:rotate-12 transition-transform duration-300"
+            fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section id="value" class="py-32 px-6 relative z-10">
+      <div class="max-w-6xl mx-auto text-center reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight" data-i18n="value_title">
+          站出來，讓你的善意<span class="text-glow-blue">發光</span></h2>
+        <p class="text-lg text-gray-500 mb-16 font-medium" data-i18n="value_subtitle">你做志工，公司挺你，將你的善意轉化成實質影響力</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div class="light-glass-card p-12 flex flex-col items-center group">
+            <div class="icon-glow-wrapper text-mtk-orange"><svg class="w-12 h-12 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg></div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="value_i1_title">$3,000 Grant</h3>
+            <p class="text-gray-500 leading-relaxed font-medium" data-i18n="value_i1_text">Donation grant to a charity
+              of
+              your choice, amplifying your kindness.</p>
+          </div>
+          <div class="light-glass-card p-12 flex flex-col items-center group">
+            <div class="icon-glow-wrapper text-mtk-blue"><svg class="w-12 h-12 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z">
+                </path>
+              </svg></div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="value_i2_title">Honor</h3>
+            <p class="text-gray-500 leading-relaxed font-medium" data-i18n="value_i2_text">Recognized by company
+              representatives as a Sustainability Ambassador.</p>
+          </div>
+          <div class="light-glass-card p-12 flex flex-col items-center group">
+            <div class="icon-glow-wrapper text-purple-600"><svg class="w-12 h-12 relative z-10" fill="none"
+                stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg></div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="value_i3_title">Inspiration</h3>
+            <p class="text-gray-500 leading-relaxed font-medium" data-i18n="value_i3_text">Share your story, inspire
+              colleagues, and create a ripple effect of goodness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="py-32 px-6 bg-white border-t border-gray-100/80">
+    <div class="max-w-6xl mx-auto reveal">
+      <h2 class="text-4xl md:text-5xl font-bold mb-24 text-center text-gray-900 tracking-tight"
+        data-i18n="timeline_title">Event Timeline</h2>
+      <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center w-full px-4">
+        <div
+          class="hidden md:block absolute top-[9px] left-8 right-8 h-[2px] timeline-line z-0 rounded-full opacity-60">
+        </div>
+        <div
+          class="md:hidden absolute top-0 left-[9px] w-[2px] h-full bg-gradient-to-b from-gray-200 via-mtk-orange to-mtk-blue z-0 rounded-full opacity-60">
+        </div>
+
+        <div class="relative z-10 flex md:flex-col items-center md:w-1/5 mb-12 md:mb-0">
+          <div
+            class="w-5 h-5 rounded-full bg-gray-300 border-2 border-white shadow-sm z-10 mr-6 md:mr-0 md:mb-6 shrink-0">
+          </div>
+          <div class="text-left md:text-center">
+            <p class="text-xl font-bold text-gray-900" data-i18n="time_e1_date">March 2</p>
+            <p class="text-sm text-gray-400 mt-1.5 font-medium" data-i18n="time_e1_name">Open for Nomination</p>
+          </div>
+        </div>
+        <div class="relative z-10 flex md:flex-col items-center md:w-1/5 mb-12 md:mb-0">
+          <div
+            class="w-5 h-5 rounded-full bg-mtk-orange border-2 border-white shadow-md z-10 dot-pulse mr-6 md:mr-0 md:mb-6 shrink-0">
+          </div>
+          <div class="text-left md:text-center">
+            <p class="text-xl font-bold text-mtk-orange" data-i18n="time_e2_date">March 20</p>
+            <p class="text-sm font-semibold text-gray-800 mt-1.5" data-i18n="time_e2_name">Application Deadline</p>
+          </div>
+        </div>
+        <div class="relative z-10 flex md:flex-col items-center md:w-1/5 mb-12 md:mb-0">
+          <div
+            class="w-5 h-5 rounded-full bg-gray-300 border-2 border-white shadow-sm z-10 mr-6 md:mr-0 md:mb-6 shrink-0">
+          </div>
+          <div class="text-left md:text-center">
+            <p class="text-xl font-bold text-gray-900" data-i18n="time_e_review_date">April</p>
+            <p class="text-sm text-gray-400 mt-1.5 font-medium" data-i18n="time_e_review_name">Diverse Panel Review</p>
+          </div>
+        </div>
+        <div class="relative z-10 flex md:flex-col items-center md:w-1/5 mb-12 md:mb-0">
+          <div
+            class="w-5 h-5 rounded-full bg-gray-300 border-2 border-white shadow-sm z-10 mr-6 md:mr-0 md:mb-6 shrink-0">
+          </div>
+          <div class="text-left md:text-center">
+            <p class="text-xl font-bold text-gray-900" data-i18n="time_e3_date">Early May</p>
+            <p class="text-sm text-gray-400 mt-1.5 font-medium" data-i18n="time_e3_name">Results Announcement</p>
+          </div>
+        </div>
+        <div class="relative z-10 flex md:flex-col items-center md:w-1/5">
+          <div
+            class="w-5 h-5 rounded-full bg-mtk-blue border-2 border-white shadow-md z-10 mr-6 md:mr-0 md:mb-6 shrink-0">
+          </div>
+          <div class="text-left md:text-center">
+            <p class="text-xl font-bold text-mtk-blue" data-i18n="time_e4_date">May 28</p>
+            <p class="text-sm font-semibold text-gray-800 mt-1.5" data-i18n="time_e4_name">Award Ceremony</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-32 px-6 bg-[#F5F5F7]">
+    <div class="max-w-3xl mx-auto reveal">
+      <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900 tracking-tight" data-i18n="faq_title">
+        FAQ</h2>
+      <div>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q1">What is "Global Volunteer Hero
+              Recognition"?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a1">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q2">Do I qualify if my contribution
+              seems small?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a2">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q3">I'm not good at writing
+              stories. Can I get help?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a3">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q4">Can we apply as a team?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a4">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q5">When is the application
+              deadline?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a5">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q6">Who can apply?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a6">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q7">Is the US$3,000 a cash prize
+              for me?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a7">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q8">What should I prepare for the
+              application?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a8">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q9">I want to nominate a colleague.
+              Do I need their consent?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a9">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q10">Is the application process
+              complicated?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a10">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q11">I applied or won in 2024. Can
+              I apply again?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a11">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q12">What are the judges really
+              looking for? Is there a secret to winning?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a12">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q13">I don't have massive numbers
+              (like millions raised or thousands helped). Do I still qualify?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a13">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q14">How is the jury composed?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a14">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q15">How do I know if my
+              application was successful?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a15">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q16">Can I edit my application
+              after submitting?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a16">...</div>
+        </details>
+        <details class="group py-1">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q17">When will the results be
+              announced?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a17">...</div>
+        </details>
+        <details class="group py-1 border-b-0">
+          <summary
+            class="flex justify-between items-center font-semibold cursor-pointer py-5 text-gray-900 hover:text-mtk-orange transition-colors duration-200">
+            <h3 class="text-base font-semibold m-0 pr-8 leading-snug" data-i18n="faq_q18">Will I be notified if I am not
+              selected?</h3>
+            <svg class="transition-transform duration-300 group-open:rotate-180 text-gray-400 shrink-0" fill="none"
+              height="18" width="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="faq-answer pb-7 text-sm leading-relaxed text-gray-600" data-i18n="faq_a18">...</div>
+        </details>
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-950 text-white py-20 px-6 border-t-2 border-mtk-orange/30">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0">
+      <div class="text-center md:text-left">
+        <div class="flex items-center gap-2 mb-2 justify-center md:justify-start">
+          <span class="text-xl font-bold">MediaTek</span>
+
+        </div>
+        <p class="text-gray-500 text-sm">2026 Global Volunteer Hero Recognition</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-gray-400 mb-3 text-sm" data-i18n="footer_cta">Ready to share your story?</p>
+        <a href="https://copilot.mediatek.inc/#/chat?agent=03e91845-13ef-40a5-94e3-1d6f3094c714" target="_blank"
+          rel="noopener noreferrer" class="footer-glow-btn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
+          </svg>
+          Apply Now with Jarvis - Your Personal Registration Assistant
+
+        </a>
+        <p class="text-gray-700 text-xs mt-8" data-i18n="footer_copy">© 2026 MediaTek Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const janeLink = '<a href="mailto:jane-yc.huang@mediatek.com?subject=[Global_Volunteer_Hero]_Questions_Regarding_Recognition" class="text-link">Jane Huang</a>';
+    const translations = {
+      "nav_about": { "en": "About", "zh": "活動介紹" },
+      "nav_criteria": { "en": "Unseen Hero", "zh": "尋找志工英雄" },
+      "nav_value": { "en": "Honor", "zh": "英雄榮耀" },
+      "nav_timeline": { "en": "Timeline", "zh": "活動時程" },
+      "nav_faq": { "en": "FAQ", "zh": "常見問題" },
+      "nav_contact": { "en": "Contact Us", "zh": "Contact Us" },
+      "hero_pre": { "en": "2026 Global Volunteer Hero Recognition", "zh": "2026 全球傑出志工英雄榮耀" },
+      "hero_title": { "en": "The Unseen Hero", "zh": "The Unseen Hero" },
+      "hero_desc": { "en": "Honoring those who make a difference — everywhere.<br>Because every small act creates a big impact.", "zh": "我們希望表揚在工作之餘，持續投身公益，讓世界變得更美好的聯發人。<br>你的微小行動，都能創造巨大影響力！" },
+      "hero_cta": { "en": "Apply Now with Jarvis - Your Personal Registration Assistant", "zh": "Apply Now with Jarvis - 你的英雄助手" },
+      "about_label": { "en": "What is Global Volunteer Hero Recognition?", "zh": "什麼是全球傑出志工英雄榮耀？" },
+      "about_headline": { "en": "Small Act, Big Impact.", "zh": "Small Act, Big Impact." },
+      "about_text1": { "en": "We want to shine a light on MediaTek colleagues who dedicate their time to making the world better. It's not just a recognition — it's a tribute to the unseen kindness around us.", "zh": "我們希望表揚在工作之餘，持續投身公益，讓世界變得更美好的聯發人。這不僅是一個榮譽獎項，更是對默默行善同仁的致敬。" },
+      "about_text2": { "en": "Whether you are caring for stray animals, storytelling at schools, or using your skills to help NGOs — if you are doing it regularly, you are the hero we are looking for.", "zh": "無論是擔任動物中途、學校導護、說故事志工、陪伴長輩、防詐宣導，或運用專業協助 NGO。只要是持續投入，都是我們尋找的英雄。" },
+      "ai_title": { "en": "Application Made Effortless", "zh": "報名，變得前所未有的簡單" },
+      "ai_text": { "en": "<strong class='text-gray-800 font-bold'>We’ve simplified everything.</strong><br>Meet Jarvis — chat briefly, share some key points, and get your volunteer story instantly.", "zh": "<strong class='text-gray-800 font-bold'>我們簡化了一切流程。</strong><br>透過全新 AI 報名助手，只需簡單幾步驟，即可為你快速生成志工故事。" },
+      "criteria_title": { "en": "Who is the Unseen Hero?", "zh": "誰是隱形英雄？" },
+      "value_title": { "en": "Step Forward. Let Your Kindness <span class='text-glow-blue'>Shine</span>", "zh": "站出來，讓你的善意<span class='text-glow-blue'>發光</span>" },
+      "value_subtitle": { "en": "You volunteer. We amplify. Your kindness turns into real social impact.", "zh": "你做志工，公司挺你，將你的善意轉化成實質影響力" },
+      "value_i1_title": { "en": "$3,000 Grant", "zh": "公益對捐權" },
+      "value_i1_text": { "en": "Donation grant to a charity of your choice, amplifying your kindness.", "zh": "公司將代表捐贈 $3,000 美金給你關注的公益機構，擴大你的善意影響力。" },
+      "value_i2_title": { "en": "Honor", "zh": "全球榮譽" },
+      "value_i2_text": { "en": "Honored globally with award presentation at our Anniversary Celebration, recognizing your passion and outstanding contributions.", "zh": "於年度公司慶進行表揚並獲頒全球榮譽獎項，彰顯你的熱忱與貢獻。" },
+      "value_i3_title": { "en": "Inspiration", "zh": "正向啟發" },
+      "value_i3_text": { "en": "Share your story, inspire colleagues, and create a ripple effect of goodness.", "zh": "分享你的故事，激勵更多同仁參與，創造善的漣漪效應。" },
+      "timeline_title": { "en": "Event Timeline", "zh": "活動時程表" },
+      "time_e1_date": { "en": "March 2", "zh": "3月2日" },
+      "time_e1_name": { "en": "Open for Nomination", "zh": "開放報名與提名" },
+      "time_e2_date": { "en": "March 20", "zh": "3月20日" },
+      "time_e2_name": { "en": "Application Deadline", "zh": "報名截止收件" },
+      "time_e_review_date": { "en": "April", "zh": "4月" },
+      "time_e_review_name": { "en": "Review and Selection", "zh": "內外部評審小組審核" },
+      "time_e3_date": { "en": "Early May", "zh": "5月上旬" },
+      "time_e3_name": { "en": "Results Announcement", "zh": "公告評選結果" },
+      "time_e4_date": { "en": "May 28", "zh": "5月28日" },
+      "time_e4_name": { "en": "Award Ceremony", "zh": "公司頒獎典禮" },
+      "faq_title": { "en": "FAQ", "zh": "常見問題 FAQ" },
+      "faq_q1": { "en": "What is \"Global Volunteer Hero Recognition\"?", "zh": "「全球傑出志工英雄榮耀」是什麼？" },
+      "faq_a1": { "en": "Launched in 2024, this program celebrates \"Small Act, Big Impact.\" It shines a light on MediaTek colleagues who dedicate their time to making the world better — not just a recognition, but a tribute to unseen kindness.", "zh": "2024 年首次推出，核心精神是 Small Act, Big Impact。我們希望表揚在工作之餘，持續投身公益，讓世界變得更美好的聯發人。這不僅是一個榮譽獎項，更是對默默行善同仁的致敬。" },
+      "faq_q2": { "en": "Do I qualify if my contribution seems small?", "zh": "我做的事可能很微小，也符合資格嗎？" },
+      "faq_a2": { "en": "Absolutely! We value consistency and heart, not just scale. Whether you are fostering stray animals, serving as a crossing guard, storytelling, or using tech skills to help NGOs — as long as it is a sustained effort (e.g., monthly/quarterly), a long-term commitment (over 1 year), or a significant contribution to disaster relief, you are the Volunteer Hero we are looking for. Team applications are also highly welcome! Unsure if your activity qualifies? Please contact " + janeLink + ".", "zh": "絕對符合！我們看重的是那份持之以恆的心，而非規模大小。只要是持續投入（如每月/每季）、長期投入（如1年以上）或參與重大社會救援（如天災賑災），都是我們尋找的志工英雄。我們也非常歡迎團隊報名！若不確定自己的行動是否符合資格，歡迎聯繫 " + janeLink + "。" },
+      "faq_q3": { "en": "I'm not good at writing stories. Can I get help?", "zh": "我不太會寫故事，有協助嗎？" },
+      "faq_a3": { "en": "Yes! Try our Registration Assistant. Just enter a few key points, and it will instantly draft your story or even create a video script for you.", "zh": "歡迎體驗AI報名助手！只需輸入幾個關鍵字，它就能協助你撰寫故事，甚至為你撰寫影片腳本。讓報名變得更簡單。" },
+      "faq_q4": { "en": "Can we apply as a team?", "zh": "我們可以「團隊」名義報名嗎？" },
+      "faq_a4": { "en": "Yes! If you and your colleagues volunteer together, you can apply as a group. Please appoint one representative to use the Registration Assistant for the application and list all team members.", "zh": "當然可以！如果你和同事是一起投入志工活動，非常歡迎以團隊名義報名。請推派一位代表使用 AI報名助手 填寫報名資料，屆時請列出所有成員名單。" },
+      "faq_q5": { "en": "When is the application deadline?", "zh": "報名截止日期是什麼時候？" },
+      "faq_a5": { "en": "The application is open until March 20. Please make sure to submit your story before the system closes!", "zh": "本次報名開放至 3月20日 截止。請務必把握時間，在截止前送出你的故事！" },
+      "faq_q6": { "en": "Who can apply?", "zh": "誰可以報名？" },
+      "faq_a6": { "en": "All regular MediaTek employees are welcome to apply! As long as you have a sustained volunteer commitment, you are the one we’re looking for..", "zh": "聯發科技全體正職員工皆可報名！只要有持續投入志工行動，都是我們想表揚的對象。" },
+      "faq_q7": { "en": "Is the US$3,000 a cash prize for me?", "zh": "US$3,000 是給個人的獎金嗎？" },
+      "faq_a7": { "en": "No, this is a donation grant. MediaTek will donate US$3,000 to a charity of your choice/support. It's our way of amplifying your kindness into greater social impact.", "zh": "不是，這是「公益對捐權」。公司將代表捐贈 US$3,000（約 NT$100,000）給你關注的公益機構，讓志工的善行化為更大的社會影響力。" },
+      "faq_q8": { "en": "What should I prepare for the application?", "zh": "報名前我需要準備什麼？" },
+      "faq_a8": { "en": "It's simple! 1. Collect 3–5 photos or a video that best capture your volunteer moments.<br>2. Use Registration Assistant to draft your story, then email your application and photos (or video) to " + janeLink + ".<br>3. Look around! If you know a humble hero, get ready to nominate them!", "zh": "流程非常簡單！<br>1. 整理 3-5 張最能代表你志工行動的照片或影片。<br>2. 運用AI報名助手，協助你準備你的志工故事，再將你的報名資料連同照片（或影片）寄給 " + janeLink + "。<br>3. 觀察身邊夥伴：如果你知道某位低調的志工英雄，歡迎推薦他！" },
+      "faq_q9": { "en": "I want to nominate a colleague. Do I need their consent?", "zh": "我想提名同事，需要先經過他同意嗎？" },
+      "faq_a9": { "en": "Yes, please! Out of respect for their privacy and willingness to participate, please confirm with them before nominating. Please submit your recommendation with the Registration Assistant!", "zh": "需要！基於尊重隱私與參與意願，請先徵得對方同意後再填寫。請使用 AI報名助手 送出你的推薦表！" },
+      "faq_q10": { "en": "Is the application process complicated?", "zh": "報名會很麻煩嗎？" },
+      "faq_a10": { "en": "Not at all! We've greatly simplified the process. You can choose to tell your story through text or a short video! Your Registration Assistant- Jarvis is here to help you draft your text or video script. Just don't forget to prepare 3–5 photos, and email your registration materials and photos to " + janeLink + "!", "zh": "完全不會！我們大幅簡化了流程，你可選擇用文字或短影音呈現故事！透過 AI報名助手Jarvis，協助你完成文字或影片口稿。別忘了準備 3-5 張照片，並將報名資料和圖片寄給 " + janeLink + "！" },
+      "faq_q11": { "en": "I applied or won in 2024. Can I apply again?", "zh": "我在2024 年曾報名或得獎過，今年還可以報名嗎？" },
+      "faq_a11": { "en": "Yes! As long as you have new contributions or continued impact from 2024–2025, we welcome you back. Show us how your journey has evolved!", "zh": "歡迎再次報名！只要你在 2024-2025 年間有新的投入或持續累積的成果，都符合資格。請與我們分享這兩年來你的新進展或擴大的影響力。" },
+      "faq_q12": { "en": "What are the judges really looking for? Is there a secret to winning?", "zh": "評審到底看重什麼？有什麼拿分祕訣嗎？" },
+      "faq_a12": { "en": "It's simple! We look for three key \"Powers\":<br><br><b>1. Action (45%):</b> Is your motivation strong? We value initiative and commitment — self-initiated projects, overcoming challenges, or quietly persisting for over 1 year (bonus points!).<br><b>2. Impact (35%):</b> What change did you bring? Share your results (quantitative data or qualitative impact both count).<br><b>3. Resonance (20%):</b> Does your story inspire? If colleagues say \"Wow, I want to join too!\", that is the most powerful resonance.", "zh": "很簡單！我們尋找的是展現三種「力」的志工行動：<br><br><b>1. 實踐力 (Action, 45%)：</b>你的動機夠強烈嗎？我們最看重「主動性」與「投入承諾」。無論是自發性的專案、克服困難的執行過程，或是默默堅持一年以上的毅力（這有額外加分！）。<br><b>2. 影響力 (Impact, 35%)：</b>你帶來了什麼改變？請跟我們分享你的行動成果！（量化數字或質化影響都可以）<br><b>3. 共鳴力 (Resonance, 20%)：</b>你的故事能激勵人心嗎？如果同事看完你的故事會說：「哇，我也想加入！」，這就是最具渲染力的共鳴。" },
+      "faq_q13": { "en": "I don't have massive numbers (like millions raised or thousands helped). Do I still qualify?", "zh": "我沒有很龐大的數據成果（如募款百萬或幫助千人），這樣也夠格嗎？" },
+      "faq_a13": { "en": "Absolutely! As long as you have \"sustained\" or \"regular\" engagement, you are exactly who we are looking for. Consistent effort creates \"depth,\" which is often more meaningful than sheer scale. If you have specific numbers (frequency, beneficiaries, results), please show them off proudly!", "zh": "絕對可以！只要你有持續／定期的投入，就是我們尋找的對象。因為持續的累積，能創造出比數據更重要的「深度」。除了展現你投入的時間外，如果你有具體的行動次數、受惠人數、或其他成果數字，也請大方秀出來。" },
+      "faq_q14": { "en": "How is the jury composed?", "zh": "評審團怎麼組成？" },
+      "faq_a14": { "en": "To ensure fairness, we use a \"Dual-Jury System\" (50% Internal / 50% External):<br><br><b>1. Internal Reps:</b> Leaders familiar with MediaTek's culture and values.<br><b>2. External Experts:</b> NGO and ESG consultants who provide an objective third-party view on social impact.", "zh": "為了公平與專業，我們採「內外雙審制」！評審團由 50% 內部代表 與 50% 外部專家 組成：<br><br><b>1. MediaTek 內部代表：</b>由熟悉公司文化與核心價值的主管擔任。<br><b>2. 外部永續專家：</b>我們特別邀請了 NGO 代表 與 ESG 領域顧問，以獨立的第三方觀點，評估志工行動的社會影響力。" },
+      "faq_q15": { "en": "How do I know if my application was successful?", "zh": "如何知道報名有沒有成功？" },
+      "faq_a15": { "en": "You will receive a confirmation email within a week after submitting. If you don't see it by then, please contact " + janeLink + ".", "zh": "送出報名後的一週內將收到確認信；若屆時未收到，請聯繫 " + janeLink + " 確認。" },
+      "faq_q16": { "en": "Can I edit my application after submitting?", "zh": "送出後還可以修改嗎？" },
+      "faq_a16": { "en": "To ensure fairness and efficiency, please double-check your application before sending. However, if there are major corrections needed, please contact " + janeLink + " directly.", "zh": "為確保評選流程順利，請在送出前務必再次確認內容。若有重大勘誤需求，請直接聯繫 " + janeLink + " 協助處理。" },
+      "faq_q17": { "en": "When will the results be announced?", "zh": "什麼時候會公布結果？" },
+      "faq_a17": { "en": "The review process will take about 4–6 weeks. Winners will be notified via email in early May.", "zh": "評選作業約需 4-6 週。預計於 5月初 以電子郵件個別通知得獎者。" },
+      "faq_q18": { "en": "Will I be notified if I am not selected?", "zh": "如果沒得獎會通知嗎？" },
+      "faq_a18": { "en": "Yes. Every story is valuable to us. Regardless of the result, we will send a thank you letter to acknowledge your participation.", "zh": "會的。每一則志工故事都值得被看見。無論結果如何，我們都會發信感謝你的參與。" },
+
+      "hero_cta_hint": { "en": "Use Registration Assistant - Jarvis to Generate Your Story", "zh": "讓 AI 英雄助手 Jarvis 幫你寫下你的故事" },
+      "hero_cta_btn": { "en": "Apply Now", "zh": "立即報名" },
+      "who_intro": { "en": "We're looking for someone who commits to volunteering <mark class='who-mark'>regularly</mark> or <mark class='who-mark'>long-term</mark>!", "zh": "我們正在尋找<mark class='who-mark'>定期</mark>或<mark class='who-mark'>長期</mark>投入志工行動的你！" },
+      "who_meta": { "en": "💡 1+ year earns bonus points ·  Individual, team, or nominate someone — all welcome!", "zh": "💡 投入超過 1 年以上有加分 ·  個人、團隊報名或是推薦他人都可以！" },
+      "who_modes": { "en": "Individual, team, or nominate someone — all welcome!", "zh": "個人、團隊報名或是推薦他人都可以！" },
+      "who_sub": { "en": "Your action doesn't need to be grand — it just needs to show your sustained commitment.", "zh": "你的行動不用很偉大，但要展現你的持續性投入" },
+      "who_lead": { "en": "Your actions can be...", "zh": "你的行動可以是.." },
+      "who_card1_title": { "en": "Companionship & Care", "zh": "陪伴關懷" },
+      "who_card1_text": { "en": "School safety patrol, storytelling<br>Nursing homes &amp; pediatric care", "zh": "校園導護、說故事<br>養老院與病童陪伴" },
+      "who_card2_title": { "en": "Knowledge & Skills", "zh": "知識與技能" },
+      "who_card2_text": { "en": "NGO website building<br>Community teaching, anti-fraud advocacy", "zh": "NGO 網站架設<br>社區教學、防詐宣導" },
+      "who_card3_title": { "en": "Eco & Sustainability", "zh": "Eco 永續" },
+      "who_card3_text": { "en": "Beach &amp; mountain cleanup<br>Sustainable living advocacy", "zh": "淨灘、淨山活動<br>永續生活推廣" },
+      "who_card4_title": { "en": "Life & Animals", "zh": "Life 生命" },
+      "who_card4_text": { "en": "Shelter volunteering<br>Animal rescue &amp; foster care", "zh": "收容所志工<br>動物救援、中途之家" },
+      "slogan_main": { "en": "Step Forward. Let Your Kindness <span class='text-glow-shine'>Shine</span>", "zh": "站出來，讓你的善意<span class='text-glow-shine'>發光</span>" },
+      "slogan_en": { "en": "", "zh": "Step Forward. Let Your Kindness <span class='text-glow-shine'>Shine</span>" },
+      "footer_cta": { "en": "Ready to share your story?", "zh": "準備好分享你的故事了嗎？" },
+      "footer_copy": { "en": "© 2026 MediaTek Inc. All rights reserved.", "zh": "© 2026 MediaTek Inc. All rights reserved." }
+    };
+
+    let currentLang = 'en';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateContent();
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('will-animate');
+        observer.observe(el);
+      });
+    });
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'zh' : 'en';
+      updateContent();
+    }
+
+    function updateContent() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[key]) el.innerHTML = translations[key][currentLang];
+      });
+      const btn = document.getElementById('lang-label');
+      if (btn) btn.textContent = currentLang === 'en' ? 'EN / 中' : '中 / EN';
+    }
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
